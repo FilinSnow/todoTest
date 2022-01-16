@@ -1,0 +1,39 @@
+.wrapperTask {
+	display: flex;
+	margin-top: 10px;
+	/* align-items: center; */
+}
+
+.list-group-item {
+	width: 100%;
+}
+
+.btn {
+	outline: none;
+}
+
+.btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	-webkit-appearance: none;
+}
+
+.mt-10 {
+	margin-top: 10px !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.inputCheckBox {
+	min-width: 16px;
+	min-height: 16px;
+	align-self: center;
+	margin-right: 5px;
+}
+
+.done {
+	text-decoration: line-through;
+	color: green;
+}
