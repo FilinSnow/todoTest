@@ -132,7 +132,7 @@ export const addTask = (value) => {
   if (!value) {
     return `Должно содержать значение`;
   }
-  if (tasks || enterText || listTasks) {
+  if (!tasks || enterText || listTasks) {
     tasks.push({
       id: new Date().getTime(),
       title: value,
