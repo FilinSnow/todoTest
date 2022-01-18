@@ -157,8 +157,3 @@ document.addEventListener("keypress", (event) => {
     addTask(enterText.value);
   }
 });
-
-function sum(a, b) {
-  return a + b;
-}
-export default sum;
