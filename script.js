@@ -1,6 +1,7 @@
 const btnAddTask = document.querySelector(".btn");
 const listTasks = document.querySelector(".list-group");
 const enterText = document.querySelector(".form-control");
+localStorage.setItem("tasks", JSON.stringify([]));
 
 const showTasks = () => {
   let tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -129,11 +130,14 @@ showTasks();
 
 export const addTask = (value) => {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (!tasks) {
+
+  }
   if (!value) {
     return `Должно содержать значение`;
   }
-  if (!tasks || enterText || listTasks) {
-    tasks.push({
+  if (tasks || enterText || listTasks) {
+    tasks?.push({
       id: new Date().getTime(),
       title: value,
       edit: false,
