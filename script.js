@@ -1,10 +1,15 @@
 const btnAddTask = document.querySelector(".btn");
 const listTasks = document.querySelector(".list-group");
 const enterText = document.querySelector(".form-control");
-localStorage.setItem("tasks", JSON.stringify([]));
+
+// localStorage.setItem("tasks", JSON.stringify([]));
 
 const showTasks = () => {
   let tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (!tasks) {
+    localStorage.setItem("tasks", JSON.stringify([]));
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+  }
   tasks?.map((task) => {
     const wrapper = document.createElement("div");
     wrapper.classList.add("wrapperTask");
@@ -129,9 +134,10 @@ const showTasks = () => {
 showTasks();
 
 export const addTask = (value) => {
-  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  let tasks = JSON.parse(localStorage.getItem("tasks"));
   if (!tasks) {
-
+    localStorage.setItem("tasks", JSON.stringify([]));
+    tasks = JSON.parse(localStorage.getItem("tasks"));
   }
   if (!value) {
     return `Должно содержать значение`;
